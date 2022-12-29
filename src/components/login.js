@@ -1,20 +1,19 @@
 import React from "react";
-import login from '../images/login.png'
+
 
 const Login = () => {
   return (
     <>
-    <img src={login} alt="backdrop" width={900} className="login-drop"/>
-      <form className="login-form">
-        <div className="login-username">
+    <div className="login-page">
+    <form className="login-form">
           <label className="login-title">LOGIN TO START PLANNING</label>
-          <input type="text" placeholder="enter username" required></input>
-          <input type="text" placeholder="enter password" required></input>
-        </div>
+          <input type="text" placeholder="enter username" required className="username"></input>
+          <input type="text" placeholder="enter password" required className="password"></input>
         <div>
             <button className="login-btn">Login</button>
         </div>
       </form>
+    </div>
     </>
   );
 };
