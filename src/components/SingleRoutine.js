@@ -2,8 +2,9 @@
 const SingleRoutine = ({routine, index}) => {
 
     return (
-        <div key={index}>
-            <h3>Routine: {routine.name}</h3>
+        <div key={index} className='card'>
+            <h3 className="card-header">Routine: {routine.name}</h3>
+            <div className="card-body">
             <p>Goal: {routine.goal}</p>
             <p>Creator: {routine.creatorName}</p>
             <h4>Activities for {routine.name}</h4>
@@ -12,7 +13,7 @@ const SingleRoutine = ({routine, index}) => {
                 <p>Description: {activity.description}</p>
                 <p>Duration: {activity.duration}</p>
                 <p>Count: {activity.count}</p>
-   </div>)})}</div>
+   </div>)})}</div></div>
     </div>
     )
 }

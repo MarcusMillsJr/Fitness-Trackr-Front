@@ -9,7 +9,7 @@ const Routines = () => {
     return(
         <>
         <h2>Routines</h2>
-            <div>
+            <div className="card-container">
                 {routines.map((routine, index) => {
                     return (
                     <SingleRoutine key={index} routine={routine}/>
