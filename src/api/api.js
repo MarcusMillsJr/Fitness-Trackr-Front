@@ -7,14 +7,13 @@ export const getActivities = async (token) => {
           const response = await fetch(`${BASE_URL}/activities`, {
           headers: {
               'Content-Type': 'application/json',
-              'Authorization': `Bearer ${token} `
             }});
-          // console.log(response, ' fetch post promise');
-          const {data} = await response.json();
-          // console.log(data, "fetch post data")
-          return data.posts
+          
+          const activities = await response.json();
+        //   console.log(activities, "fetched activities data")
+          return activities
       } catch(error){
-          console.error('error fetching posts')
+          console.error('error fetching activities')
       }
   };
   
