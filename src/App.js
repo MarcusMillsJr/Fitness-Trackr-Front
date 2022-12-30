@@ -1,5 +1,5 @@
 import { Route, Routes, Link } from "react-router-dom"
-import {  Activities, Home, Login, Routines } from "./components/Index"
+import {  Activities, Home, Login, Routines, CreateActivity } from "./components/Index"
 import CreateRoutine from "./components/CreateRoutine"
 import { getActivities } from "./api/api"
 import React, { useEffect, useState } from "react"
@@ -58,6 +58,7 @@ const App = () => {
         <Route path="/activities" element={<Activities activities={activities} />}/>
         <Route path="/routines" element={<Routines />} />
         <Route path="/createroutine" element={<CreateRoutine />} />
+        <Route path="/createactivity" element={<CreateActivity setActivities={setActivities}/>} />
       </Routes>
     </>
   )
