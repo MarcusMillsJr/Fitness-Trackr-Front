@@ -1,6 +1,3 @@
-//export {default as xxx} from './xxx;
-//do this for all components
-
 // EXAMPLES BELOW OF WHAT SHOULD BE IN THIS FILE
 
 export {default as Home} from "./Home"

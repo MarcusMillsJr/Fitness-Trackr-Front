@@ -1,40 +1,24 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import skating from '../images/skating.mp4'
-import running from '../images/running.mp4'
-import pushup from '../images/pushup.mp4'
-
-
+import React from "react";
+import { Link } from "react-router-dom";
+import untitled from "../images/bluedrop.png";
 
 const Home = () => {
+  return (
+    //if loggin in then say hello ${users name}
+    <>
+      <div className="video">
+        <img src={untitled} alt="green background" className="backdrop" />
+        <div className="home-div">
+        <h1 className="homediv-title">HELLO PAL</h1>
+        <h2 className="homediv-slogan">Let's plan some activities and leisure, together.</h2>
+          <Link to="/login" className="homediv-login">
+            GET STARTED
+          </Link>
+      </div>
+      </div>
+      
+    </>
+  );
+};
 
-    return (
-        //if loggin in then say hello ${users name}
-        <>
-        <div className="video">
-        <video src={skating} className="skating" autoPlay loop muted></video>
-        <video src={running} className="skating" autoPlay loop muted></video>
-        <video src={pushup} className="skating" autoPlay loop muted></video>
-        </div>
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-        <footer>
-            <ul>
-                <Link><li>About</li></Link>
-                <Link><li>Contact</li></Link>
-                <Link><li>Locations</li></Link>
-                <Link><li>Terms & Conditions</li></Link>
-                <Link><li>FAQs</li></Link>
-            </ul>
-        </footer>
-        </>
-    )
-}
-
-
-
-
-export default Home
+export default Home;
