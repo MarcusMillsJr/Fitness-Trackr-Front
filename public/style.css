@@ -166,6 +166,16 @@ a {
     margin-left: 15%;
 }
 
+.create-activity-link{
+    display: flex;
+    align-items: flex-end;
+    font-size: larger;
+    font-weight: bolder;
+    color: green;
+    background-color: aqua;
+    padding-top: 4rem;
+}
+
 /* Large screens */
 nav.nav-right {
     display: flex;

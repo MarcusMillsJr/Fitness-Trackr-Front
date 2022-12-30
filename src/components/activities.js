@@ -10,20 +10,22 @@ const Activities = (props) => {
     //if loggin in then say hello ${users name}
 
     <>
-      <Link to="/createactivity" className="create-activity">
+    <div className="activities-page">
+    <div className="create-activity">
+        <Link to="/createactivity" className="create-activity-link">
         Create New Activity
       </Link>
-      <p>
-        This will be where activies are listed and able to be seen, also want to
-        add a button/link to create a new activity which will be a form If an
-        activity already exists, throw an error
-      </p>
-      <p>This is </p>
-      <ul>
+    </div>
+    <div className="list-activities">
+    <ul>
       {activities.map((activity) => (
         <li key={activity.id}>{activity.name}</li>
       ))}
     </ul>
+    </div>
+    </div>
+    
+     
 
       
     </>
