@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Routines, CreateNewRoutine } from "./components";
 
 const App = () => {
   return <>
@@ -9,6 +10,8 @@ const App = () => {
               <p>Login</p>
           </nav>
            <h1>Hello World</h1>
+           <Routines />
+           <CreateNewRoutine />
           </>;
 };
 
