@@ -15,12 +15,12 @@ const RegisterUser = () => {
         let firstPassword = document.querySelector('.password').value,
             confirmPassword = document.querySelector('.confirm_password').value;
           
-            if (firstPassword == "") {
+            if (firstPassword === "") {
                 alert("Password field cannot be empty");
                 return false;
             } 
             
-            if (firstPassword != confirmPassword) {
+            if (firstPassword !== confirmPassword) {
                 alert("Passwords did not match, please try again!");
                 return false
             }
