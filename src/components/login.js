@@ -1,20 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
+import { loginUser } from "../api";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleOnChange = (event) => {
+    const changed = event.target.id;
+    if (changed === "username") {
+      setUsername(event.target.value);
+    } else {
+      setPassword(event.target.value);
+    }
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const res = await loginUser(username, password);
+    const token = res['token']
+    console.log(token, 'login component')
+    window.localStorage.setItem('fitness_tracker_JWT', token);
+    window.location.assign("/");
+  };
+
   return (
-    <>
-    <div className="login-page">
-    <form className="login-form">
-          <label className="login-title">LOGIN TO START PLANNING</label>
-          <input type="text" placeholder="enter username" required className="username"></input>
-          <input type="text" placeholder="enter password" required className="password"></input>
-        <div>
-            <button className="login-btn">Login</button>
-        </div>
+    <div className="login-form">
+      <h2 className="form-title">Login</h2>
+      <form onSubmit={handleSubmit} className="login-box">
+        <label>Username:</label>
+        <input
+          id="username"
+          onChange={handleOnChange}
+          value={username}
+          placeholder="username"
+        />
+
+        <label>Password:</label>
+        <input
+          id="password"
+          onChange={handleOnChange}
+          value={password}
+          placeholder="password"
+        />
+
+        <button type="submit" id="login-button">
+          Login
+        </button>
       </form>
     </div>
-    </>
   );
 };
 
-export default Login
+export default Login;
+

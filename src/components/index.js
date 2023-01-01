@@ -1,9 +1,14 @@
-// EXAMPLES BELOW OF WHAT SHOULD BE IN THIS FILE
+//export {default as xxx} from './xxx;
+//do this for all components
+export { default as Navbar } from './Navbar';
+export { default as Home } from './Home';
+export { default as Register } from './Register';
+export { default as Login } from './Login';
+export { default as Routines} from './Routines';
+export { default as Activities } from './Activities';
+export { default as My_routines } from './My_routines';
+export { default as CreateNewRoutine} from './CreateNewRoutine';
+export {default as CreateActivity} from './CreateActivity';
+export { default as EditRoutine } from './EditRoutine';
+export { default as DeleteRoutine } from './DeleteRoutine';
 
-export {default as Home} from "./Home"
-// export {default as Profile} from "./Profile"
-export {default as Login} from "./Login"
-export {default as Activities} from "./Actvitites"
-export {default as Routines} from "./Routines"
-export {default as CreateActivity} from "./CreateActivity"
-// export {default as MyInbox} from "./MyInbox"
