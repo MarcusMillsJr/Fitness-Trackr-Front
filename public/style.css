@@ -53,3 +53,38 @@
   .card-body {
     padding: 5px;
   }
+  #button-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+  #delete-button {
+    background-color: #AA0000;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+#delete-button:hover {
+    background-color: #DD0000;
+    color: black;
+}
+#edit-click {
+    background-color: rgb(195, 195, 30);
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+#edit-click:hover {
+    background-color: yellow;
+    color: black;
+}

@@ -14,8 +14,10 @@ const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, t
                 <p>Duration: {activity.duration}</p>
                 <p>Count: {activity.count}</p>
    </div>)})}</div></div>
-   <button onClick={() => setEditRoutine(routine)}>Edit Post</button>
-   <button id="delete-button" onClick={() => {deleteRoutine(routine.id, token, routines, setRoutines)}}>Delete</button>
+   <div id="button-container">
+   <button id='edit-click' onClick={() => setEditRoutine(routine)}><i className='fas fa-edit'></i></button>
+   <button id="delete-button" onClick={() => {deleteRoutine(routine.id, token, routines, setRoutines)}}><i className='fas fa-trash'></i></button>
+    </div>
     </div>
     )
 }
