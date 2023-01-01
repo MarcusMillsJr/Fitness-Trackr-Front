@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import { fetchPublicRoutines } from "../api/api"
-import SingleRoutine from "./SingleRoutine"
+import {CreateNewRoutine, SingleRoutine, EditRoutine} from './index'
 const Routines = () => {
     const [routines, setRoutines] = useState([])
+    const [editedRoutine, setEditRoutine] = useState({})
     useEffect(() => {
         fetchPublicRoutines().then(result => setRoutines(result))
     }, [])
@@ -12,10 +13,14 @@ const Routines = () => {
             <div className="card-container">
                 {routines.map((routine, index) => {
                     return (
-                    <SingleRoutine key={index} routine={routine}/>
+                    <SingleRoutine key={index} routine={routine} setEditRoutine={setEditRoutine} token={'sjgjhdfsbjghsf'} />
                     )
                 })}
+                
             </div>
+            {Object.keys(editedRoutine).length > 0 ? <EditRoutine
+             routines={routines} editedRoutine={editedRoutine}
+              setEditRoutine={setEditRoutine} setRoutines={setRoutines}/> : <CreateNewRoutine />}
         </>
     )
 }

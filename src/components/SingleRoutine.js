@@ -1,5 +1,5 @@
-
-const SingleRoutine = ({routine, index}) => {
+import { deleteRoutine } from "../api/api";
+const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, token}) => {
 
     return (
         <div key={index} className='card'>
@@ -14,6 +14,8 @@ const SingleRoutine = ({routine, index}) => {
                 <p>Duration: {activity.duration}</p>
                 <p>Count: {activity.count}</p>
    </div>)})}</div></div>
+   <button onClick={() => setEditRoutine(routine)}>Edit Post</button>
+   <button id="delete-button" onClick={() => {deleteRoutine(routine.id, token, routines, setRoutines)}}>Delete</button>
     </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Routines, CreateNewRoutine } from "./components";
+import { Routines} from "./components";
 
 const App = () => {
   return <>
@@ -11,7 +11,6 @@ const App = () => {
           </nav>
            <h1>Hello World</h1>
            <Routines />
-           <CreateNewRoutine />
           </>;
 };
 
