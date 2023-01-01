@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { registerUser } from '../api';
+import { registerUser } from '../api/api';
+import { Link } from "react-router-dom";
 
 const RegisterUser = () => {
     const [user, setUser] = useState("");
@@ -60,6 +61,7 @@ const RegisterUser = () => {
              <br/>
              <button onClick={handleRegisterClick}>Register</button>  
         </form>
+        <Link to="/login"  >Already have an account with us? Click here to login</Link>
       </div>    
     );
 };

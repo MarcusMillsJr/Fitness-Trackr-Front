@@ -1,5 +1,5 @@
 import { Route, Routes, Link } from "react-router-dom"
-import {  Activities, Home, Login, Routines, CreateActivity } from "./components/Index"
+import {  Activities, Home, Login, Routines, CreateActivity, Register } from "./components/Index"
 import CreateRoutine from "./components/CreateRoutine"
 import { getActivities } from "./api/api"
 import React, { useEffect, useState } from "react"
@@ -43,7 +43,6 @@ const App = () => {
       </nav>
         <nav className="nav-right">
         <Link to="/profile" className="profile-btn">Profile</Link>
-        <Link to="/about" className="about-btn">About</Link>
           <Link to="/activities" className="activities-btn">Activities</Link>
           <Link to="routines" className="routines-btn">Routines</Link>
           <Link to="/login" className="login-btn">Login</Link>
@@ -59,6 +58,7 @@ const App = () => {
         <Route path="/routines" element={<Routines />} />
         <Route path="/createroutine" element={<CreateRoutine />} />
         <Route path="/createactivity" element={<CreateActivity setActivities={setActivities}/>} />
+        <Route path="/register" element={<Register/>} />
       </Routes>
     </>
   )
