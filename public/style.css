@@ -1,6 +1,6 @@
 .routine-forms {
     position: sticky;
-    top: 40px;
+    top: 50px;
     width: 300px;
     height: fit-content;
     margin: 20px;
@@ -68,6 +68,8 @@
     background-color: #45a049;
   }
   .card-container {
+    position: relative;
+    top: 50px;
     display: flex;
     flex-wrap: wrap;
   }

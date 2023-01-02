@@ -1,8 +1,8 @@
-const BASE_URL = 'https://fitnesstrac-kr.herokuapp.com/api'
+const baseURL = 'https://fitnesstrac-kr.herokuapp.com/api'
 
 export async function fetchPublicRoutines(){
     try{
-        const response = await fetch(`${BASE_URL}/routines`, {
+        const response = await fetch(`${baseURL}/routines`, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -15,7 +15,7 @@ export async function fetchPublicRoutines(){
 }
 export async function createRoutine(name, goal, token){
     try{
-        const response = await fetch(`${BASE_URL}/routines`, {
+        const response = await fetch(`${baseURL}/routines`, {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ export async function createRoutine(name, goal, token){
 }
 export async function updateRoutine(routineId, name, goal, token){
     try{
-        const response = await fetch(`${BASE_URL}/routines/${routineId}`, {
+        const response = await fetch(`${baseURL}/routines/${routineId}`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json',
@@ -54,7 +54,7 @@ export async function updateRoutine(routineId, name, goal, token){
 }
 export async function deleteRoutine(routineId, token, routines, setRoutines){
     try{
-        const response = await fetch(`${BASE_URL}/routines/${routineId}`, {
+        const response = await fetch(`${baseURL}/routines/${routineId}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ export async function deleteRoutine(routineId, token, routines, setRoutines){
 }
 export async function addActivityToRoutine(activityId, count, duration, routineId, token){
     try{
-        const response = await fetch(`${BASE_URL}/routines/${routineId}/activities`, {
+        const response = await fetch(`${baseURL}/routines/${routineId}/activities`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -91,7 +91,7 @@ export async function addActivityToRoutine(activityId, count, duration, routineI
 }
 export async function updateRoutineActivity(count, duration, token, routineActivityId){
     try{
-        const response = await fetch(`${BASE_URL}/routine_activities/${routineActivityId}`, {
+        const response = await fetch(`${baseURL}/routine_activities/${routineActivityId}`, {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json',
@@ -110,7 +110,7 @@ export async function updateRoutineActivity(count, duration, token, routineActiv
 }
 export async function deleteRoutineActivity(token, routineActivityId){
     try{
-        const response = await fetch(`${BASE_URL}/routine_activities/${routineActivityId}`, {
+        const response = await fetch(`${baseURL}/routine_activities/${routineActivityId}`, {
             method: "DELETE",
             headers: {
                 'Content-Type': 'application/json',
@@ -121,8 +121,7 @@ export async function deleteRoutineActivity(token, routineActivityId){
         return result
     } catch(error) {
         throw error
-    }
-export const baseURL = 'https://fitnesstrac-kr.herokuapp.com/api/'
+    }}
 
 //Post /api/users/register
 export const registerUser = async (userObject) => {
