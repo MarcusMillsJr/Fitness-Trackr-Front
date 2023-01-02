@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-const AddActivityToRoutine = ({routines, setAddActivityTo}) => {
+const AddActivityToRoutine = ({routines, setAddActivityTo, token}) => {
     const [activity, setActivity] = useState('')
     const [count, setCount] = useState('')
     const [duration, setDuration] = useState('')

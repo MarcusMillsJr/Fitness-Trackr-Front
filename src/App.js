@@ -1,12 +1,12 @@
 import { Route, Routes, Link } from "react-router-dom"
 import {  Activities, Home, Login, Routines, CreateActivity, Register, MyRoutines } from "./components/index"
-import { getActivities, fetchPublicRoutines } from "./api/api"
+import { getActivities, fetchPublicRoutines, getUser } from "./api/api"
 import React, { useEffect, useState } from "react"
 
 
 
 const App = () => {
-
+  const [user, setUser] = useState({})
   const [activities, setActivities] = useState([]);
   const [token, setToken] = useState(
     window.localStorage.getItem("token" || "")
@@ -37,6 +37,11 @@ const App = () => {
   useEffect(() => {
     fetchPublicRoutines().then(result => setRoutines(result))
   }, [])
+  useEffect(() => {
+    if(token){
+      getUser(token).then(result => setUser(result));
+    }
+  }, [token, routines])
   
  return(
     <>
@@ -54,14 +59,14 @@ const App = () => {
     </nav>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/login" element={<Login token={token} setToken={setToken}/>} />
 
         <Route path="/activities" element={<Activities activities={activities} />}/>
         <Route path="/createactivity" element={<CreateActivity setActivities={setActivities}/>} />
         <Route path="/register" element={<Register/>} />
 
         <Route path="/routines" element={<Routines routines={routines} setRoutines={setRoutines}/>} />
-        <Route path="/MyRoutines" element={<MyRoutines routines={routines} setRoutines={setRoutines}/>} />
+        <Route path="/MyRoutines" element={<MyRoutines routines={routines} setRoutines={setRoutines} user={user} token={token}/>} />
       </Routes>
     </>
  )}

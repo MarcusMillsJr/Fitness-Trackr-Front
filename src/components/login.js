@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { loginUser } from "../api/api";
 
 
-const Login = () => {
+const Login = ({token, setToken}) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
@@ -18,9 +18,10 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const res = await loginUser(username, password);
-    const token = res['token']
+    const newToken = res['token']
+    setToken(newToken);
     console.log(token, 'login component')
-    window.localStorage.setItem('fitness_tracker_JWT', token);
+    window.localStorage.setItem('fitness_tracker_JWT', newToken);
     window.location.assign("/");
   };
 
