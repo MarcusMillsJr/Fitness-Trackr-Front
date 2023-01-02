@@ -137,3 +137,178 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
 }
+body, hmtl {
+    margin: 0;
+    border: none;
+}
+
+.video{
+    display: flex;
+    height: 110vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    object-fit:cover;
+    position: fixed;
+}
+
+.login-page{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-title{
+    display: flex;
+    color: white;
+}
+
+.login-form{
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+    width: 50vw;
+    align-items: center;
+    background-color: black;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.login-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    margin: 0 auto;
+}
+
+.username{
+    display: flex;
+    color: black
+}
+
+.password{
+    display: flex;
+    color:black;
+}
+
+.home-div{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    position: fixed;
+    padding: 3rem 12rem;
+}
+
+.homediv-title{
+display: flex;
+color: white;
+font-size: 6vw;
+margin: 0;
+font-family: monospace;
+}
+
+
+
+.homediv-slogan{
+    display: flex;
+    color: white;
+    font-family: monospace;
+    font-size: 1.2vw;
+}
+
+.homediv-login{
+    display: flex;
+    color: white;
+    font-family: monospace;
+    font-weight: bolder;
+    font-size: 1.5vw;
+    background-color: rgb(0, 0, 0);
+    height: 5%;
+    width: 13%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    text-decoration: none;
+    margin-top: 1rem;
+}
+
+.whole-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    list-style: none;
+    width: 100vw;
+    height: 3rem;
+    background-color: rgb(0, 0, 0);
+    z-index: 1;
+    position: fixed;
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+  }
+
+.home-btn{
+    display: flex;
+    height: inherit;
+    width: 200%;
+    margin-left: 30%; 
+    font-weight: bolder;
+    color: white;
+    font-size: 230%;
+    font-family: monospace;
+}
+
+.nav-right{
+    display: flex;
+    margin-left: 40%;
+    font-size: 140%;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.routines-btn{
+    display: flex;
+    margin-left: 15%;
+    color: white;
+}
+
+.profile-btn{
+    display: flex;
+    color: white;
+}
+.login-btn{
+    display: flex;
+    margin-left: 15%;
+    color: white;
+}
+
+.about-btn{
+    display: flex;
+    margin-left: 15%;
+    color: white;
+}
+
+
+.activities-btn{
+    display: flex;
+    color: white;
+    margin-left: 15%;
+}
+
+/* Large screens */
+nav.nav-right {
+    display: flex;
+  }
+  
+  nav.nav-right a {
+    display: inline-block;
+  }
