@@ -1,5 +1,5 @@
 import { deleteRoutine } from "../api/api";
-const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, token}) => {
+const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, setAddActivityTo, token}) => {
 
     return (
         <div key={index} className='card'>
@@ -15,7 +15,8 @@ const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, t
                 <p>Count: {activity.count}</p>
    </div>)})}</div></div>
    <div id="button-container">
-   <button id='edit-click' onClick={() => setEditRoutine(routine)}><i className='fas fa-edit'></i></button>
+   <button id='edit-click' onClick={() => {setEditRoutine(routine); setAddActivityTo({})}}><i className='fas fa-edit'></i></button>
+   <button id='add-activity-button' onClick={() => {setAddActivityTo(routine); setEditRoutine({})} }>Add Activity</button>
    <button id="delete-button" onClick={() => {deleteRoutine(routine.id, token, routines, setRoutines)}}><i className='fas fa-trash'></i></button>
     </div>
     </div>

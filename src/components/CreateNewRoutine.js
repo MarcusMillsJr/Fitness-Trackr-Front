@@ -12,9 +12,9 @@ const CreateNewRoutine = () => {
     return (
         <form className="routine-forms" onSubmit={handleSubmit}>
             <h3>Create Routine</h3>
-            <input className="text-input" type="text" value={name} placeholder="Routine Name" onChange={event => setName(event.target.value)}></input>
-            <input className="text-input" type="text" value={goal} placeholder="Routine Goal" onChange={event => setGoal(event.target.value)}></input>
-            <button id="submit-button" type="submit" value="Submit">Submit</button>
+            <input required className="text-input" type="text" value={name} placeholder="Routine Name" onChange={event => setName(event.target.value)}></input>
+            <input required className="text-input" type="text" value={goal} placeholder="Routine Goal" onChange={event => setGoal(event.target.value)}></input>
+            <button className="submit-button" type="submit" value="Submit">Submit</button>
         </form>
     )
 }

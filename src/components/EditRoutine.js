@@ -19,7 +19,10 @@ const EditRoutine =({editedRoutine, routines, setRoutines, setEditRoutine, token
             <input className="text-input" type='text' value={routineName} onChange={event => setRoutineName(event.target.value)}></input>
             <label>Routine Goal:</label>
             <input className="text-input" type='text' value={goal} onChange={event => setGoal(event.target.value)}></input>
-            <button id='edit-button' type="submit">Edit Post</button>
+            <span>
+                <button className="cancel-button" onClick={() => setEditRoutine({})}>Cancel</button>
+                <button id='edit-button' type="submit">Edit Post</button>
+            </span>
         </form>
     )
 }
