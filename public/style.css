@@ -203,16 +203,15 @@ body, hmtl {
     justify-content: center;
     align-items: left;
     position: fixed;
-    padding: 3rem 8rem;
+    padding: 3rem 12rem;
 }
 
 .homediv-title{
 display: flex;
-color: rgb(255, 255, 255);
-font-size: 8vw;
+color: white;
+font-size: 6vw;
 margin: 0;
 font-family: monospace;
-text-shadow: 3px 3px 3px 3px black;
 }
 
 
@@ -221,7 +220,7 @@ text-shadow: 3px 3px 3px 3px black;
     display: flex;
     color: white;
     font-family: monospace;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
 }
 
 .homediv-login{
@@ -272,7 +271,7 @@ a {
 
 .nav-right{
     display: flex;
-    margin-left: 50%;
+    margin-left: 40%;
     font-size: 140%;
     font-family: monospace;
     font-weight: bold;
@@ -307,94 +306,6 @@ a {
     margin-left: 15%;
 }
 
-.create-activity-link{
-    display: flex;
-    align-items: flex-end;
-    font-size: larger;
-    font-weight: bolder;
-    color: green;
-    background-color: aqua;
-    padding-top: 4rem;
-}
-
-.skate{
-    display: flex;
-    height: 150vh;
-    width: 150vw;
-    object-fit: cover;
-}
-
-.hoops{
-    display: flex;
-    height: 130vh;
-    width: 100vw;
-    justify-content: center;
-    align-items: center;
-    object-fit: cover;
-    margin: 0;
-    padding: 0;
-}
-
-.activity-form{
-    display: flex;
-    z-index: 1;
-    height: 33vh;
-    width: 33vw;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: black;
-    color: white;
-    padding: 0;
-    margin: 0 auto;
-    margin-top: 3rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.827), 1px 6px 6px rgba(0,0,0,0.23);
-}
-.activity-title{
-   display: flex;
-   margin: 0 auto;
-   margin-top: 2rem;
-   position: absolute;
-   color: white;
-   top: 30%;
-   left: 50%;
-   font-family: monospace;
-   font-size: 200%;
-   transform: translate(-50%,-50%);
-}
-
-.activity-label{
-    display: flex;
-    width: 30vw;
-    font-size: 1.2rem;
-    align-items: left;
-    font-family: monospace;
-    justify-content: left;
-    font-family: monospace;
-    margin: .5rem;
-}
-
-.forminput{
-    display: flex;
-    width: 30vw;
-    height:3vh;
-    margin-bottom: 2rem;
-    font-family: monospace;
-}
-
-.formbutton{
-    display: flex;
-    color: white;
-    background-color: rgb(210, 0, 0);
-    width: 20vw;
-    justify-content: center;
-    align-items: center;
-    height: 4vh;
-}
 /* Large screens */
 nav.nav-right {
     display: flex;
@@ -402,4 +313,4 @@ nav.nav-right {
   
   nav.nav-right a {
     display: inline-block;
-
+  }

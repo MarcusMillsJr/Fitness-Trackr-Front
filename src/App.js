@@ -1,19 +1,17 @@
-import { Route, Routes, Link, useNavigate } from "react-router-dom"
-import {  Activities, Home, Login, Routines, CreateActivity, Register, MyRoutines } from "./components/Index"
+import { Route, Routes, Link } from "react-router-dom"
+import {  Activities, Home, Login, Routines, CreateActivity, Register, MyRoutines } from "./components/index"
 import { getActivities, fetchPublicRoutines } from "./api/api"
 import React, { useEffect, useState } from "react"
-import CreateRoutine from "./components/CreateRoutine"
 
 
 
 const App = () => {
 
   const [activities, setActivities] = useState([]);
-  // const [token, setToken] = useState(
-  //   window.localStorage.getItem("token" || "")
-  // );
-
-  // const navigate = useNavigate();
+  const [token, setToken] = useState(
+    window.localStorage.getItem("token" || "")
+  );
+  const [routines, setRoutines] = useState([])
 
   useEffect(() => {
     const getAllActivities = async () => {
@@ -28,14 +26,14 @@ const App = () => {
     getAllActivities();
   }, [setActivities]);
 
-  // useEffect(() => {
-  //   if (token) {
-  //     window.localStorage.setItem("token", token);
-  //   } else {
-  //     window.localStorage.removeItem("token", token);
-  //   }
-  // }, [token]);
-  const [routines, setRoutines] = useState([])
+  useEffect(() => {
+    if (token) {
+      window.localStorage.setItem("token", token);
+    } else {
+      window.localStorage.removeItem("token", token);
+    }
+  }, [token]);
+ 
   useEffect(() => {
     fetchPublicRoutines().then(result => setRoutines(result))
   }, [])
@@ -46,16 +44,14 @@ const App = () => {
     <nav className="nav-list">
         <Link to="/" className="home-btn">Fitness Trackr</Link>
       </nav>
-        <nav className="nav-right"
+        <nav className="nav-right">
 
         <Link to="/MyRoutines" className="profile-btn">My Routines</Link>
           <Link to="/activities" className="activities-btn">Activities</Link>
-          <Link to="routines" className="routines-btn">Routines</Link>
+          <Link to="/routines" className="routines-btn">Routines</Link>
           <Link to="/login" className="login-btn">Login</Link>
         </nav>
     </nav>
-     
-     
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -68,7 +64,6 @@ const App = () => {
         <Route path="/MyRoutines" element={<MyRoutines routines={routines} setRoutines={setRoutines}/>} />
       </Routes>
     </>
- )
-}
+ )}
 
 export default App

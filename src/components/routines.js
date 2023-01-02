@@ -3,7 +3,6 @@ const Routines = ({routines, setRoutines}) => {
 
     return(
         <>
-        <h2>Routines</h2>
             <div className="card-container">
                 {routines.map((routine, index) => {
                     return (
