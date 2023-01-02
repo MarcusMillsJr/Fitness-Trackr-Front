@@ -8,7 +8,7 @@ const App = () => {
     <>
     <nav className="whole-nav">
     <nav className="nav-list">
-        <Link to="/" className="home-btn">HELLOPAL</Link>
+        <Link to="/" className="home-btn">FitnessTrackr Home</Link>
       </nav>
         <nav className="nav-right">
         <Link to="/profile" className="profile-btn">Profile</Link>
