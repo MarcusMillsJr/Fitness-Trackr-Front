@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const RegisterUser = () => {
     const [user, setUser] = useState("");
     const [password, setPassword]= useState("");
-
+ //
     const handleRegisterClick = async (event) => {
         event.preventDefault();
         const registerInfo = {
