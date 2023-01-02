@@ -1,18 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import {SingleRoutine,} from './index'
+const Routines = ({routines, setRoutines}) => {
 
-const Routines = () => {
     return(
         <>
-        <div>
-            <Link to="/createroutine" className="create-routine">Create Routine Button</Link>
-        </div>
-        <div>
-            <p>other code here</p>
-        </div>
-        
+        <h2>Routines</h2>
+            <div className="card-container">
+                {routines.map((routine, index) => {
+                    return (
+                    <SingleRoutine key={index} routine={routine}/>
+                    )
+                })}
+                
+            </div>
         </>
     )
 }
-
 export default Routines
