@@ -1,8 +1,7 @@
-import { Route, Routes, Link, useNavigate } from "react-router-dom"
+import { Route, Routes, Link } from "react-router-dom"
 import {  Activities, Home, Login, Routines, CreateActivity, Register, MyRoutines } from "./components/Index"
 import { getActivities, fetchPublicRoutines } from "./api/api"
 import React, { useEffect, useState } from "react"
-import CreateRoutine from "./components/CreateRoutine"
 
 
 
@@ -45,13 +44,13 @@ const App = () => {
     <nav className="whole-nav">
     <nav className="nav-list">
         <Link to="/" className="home-btn">Fitness Trackr</Link>
-      </nav>
-        <nav className="nav-right"
 
+        <nav className="nav-right">
         <Link to="/MyRoutines" className="profile-btn">My Routines</Link>
           <Link to="/activities" className="activities-btn">Activities</Link>
           <Link to="routines" className="routines-btn">Routines</Link>
           <Link to="/login" className="login-btn">Login</Link>
+        </nav>
         </nav>
     </nav>
      
