@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { addActivityToRoutine } from "../api/api"
-const AddActivityToRoutine = ({routines, addActivityTo, activities, setAddActivityTo, token}) => {
+const AddActivityToRoutine = ({routines, addActivityTo, activities, setAddActivityTo, setUpdateRoutines, token}) => {
     const [activity, setActivity] = useState('')
     const [count, setCount] = useState('')
     const [duration, setDuration] = useState('')
@@ -8,13 +8,13 @@ const AddActivityToRoutine = ({routines, addActivityTo, activities, setAddActivi
     const handleAddActivity = async (event) => {
         event.preventDefault()
         const [newActivity] = activities.filter(activityy => activity === activityy.name)
-        console.log(addActivityTo)
-        const newAddedActivity = await addActivityToRoutine(newActivity.id, count, duration, addActivityTo.id, token)
-        console.log(newAddedActivity)
+        await addActivityToRoutine(newActivity.id, count, duration, addActivityTo.id, token)
+        setUpdateRoutines(Math.random())
         setAddActivityTo({})
         setCount('')
         setDuration('')
         setActivity('')
+
     }
     return (
         <form className="routine-forms"

@@ -8,10 +8,12 @@ import React, { useEffect, useState } from "react"
 const App = () => {
   const [user, setUser] = useState({})
   const [activities, setActivities] = useState([]);
+  const [routines, setRoutines] = useState([])
+  const [updateRoutines, setUpdateRoutines] = useState(0)
   const [token, setToken] = useState(
     window.localStorage.getItem("token" || "")
   );
-  const [routines, setRoutines] = useState([])
+ 
 
   useEffect(() => {
     const getAllActivities = async () => {
@@ -36,7 +38,7 @@ const App = () => {
  
   useEffect(() => {
     fetchPublicRoutines().then(result => setRoutines(result))
-  }, [])
+  }, [updateRoutines])
   useEffect(() => {
     if(token){
       getUser(token).then(result => setUser(result));
@@ -66,7 +68,7 @@ const App = () => {
         <Route path="/register" element={<Register/>} />
 
         <Route path="/routines" element={<Routines routines={routines} setRoutines={setRoutines}/>} />
-        <Route path="/MyRoutines" element={<MyRoutines routines={routines} activities={activities} setRoutines={setRoutines} user={user} token={token}/>} />
+        <Route path="/MyRoutines" element={<MyRoutines routines={routines} activities={activities} setRoutines={setRoutines} setUpdateRoutines={setUpdateRoutines} user={user} token={token}/>} />
       </Routes>
     </>
  )}
