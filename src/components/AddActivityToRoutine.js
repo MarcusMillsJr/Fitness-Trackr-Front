@@ -1,24 +1,32 @@
 import { useState } from "react"
-
-const AddActivityToRoutine = ({routines, setAddActivityTo, token}) => {
+import { addActivityToRoutine } from "../api/api"
+const AddActivityToRoutine = ({routines, addActivityTo, activities, setAddActivityTo, token}) => {
     const [activity, setActivity] = useState('')
     const [count, setCount] = useState('')
     const [duration, setDuration] = useState('')
 
+    const handleAddActivity = async (event) => {
+        event.preventDefault()
+        const [newActivity] = activities.filter(activityy => activity === activityy.name)
+        console.log(addActivityTo)
+        const newAddedActivity = await addActivityToRoutine(newActivity.id, count, duration, addActivityTo.id, token)
+        console.log(newAddedActivity)
+        setAddActivityTo({})
+        setCount('')
+        setDuration('')
+        setActivity('')
+    }
     return (
         <form className="routine-forms"
         id="add-activity-form"
-        onSubmit={() => {
-            setAddActivityTo({})
-        }}>
+        onSubmit={handleAddActivity}>
             <label>Choose Activity:</label>
             <select 
                 id="activity-dropdown"
                 value={activity}
                 required
                 onChange={(event) => setActivity(event.target.value)}>
-                <option>Activity</option>
-                {[{name: 'Jim'}, {name: "bill"}].map((activity, index) => <option
+                {activities.map((activity, index) => <option
                 key={index} value={activity.name}>{activity.name}</option>)}
             </select>
         <span><label>Count: </label>

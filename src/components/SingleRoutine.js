@@ -1,6 +1,12 @@
 import { deleteRoutine } from "../api/api";
 const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, setAddActivityTo, token}) => {
 
+    const handleDelete = async () => {
+        console.log(routines)
+        const deletedRoutine = await deleteRoutine(routine.id, token)
+        const newRoutines = routines.filter((routine) => routine.id !== deletedRoutine.id)
+        setRoutines(newRoutines)
+    }
     return (
         <div key={index} className='card'>
             <h3 className="card-header">Routine: {routine.name}</h3>
@@ -17,7 +23,7 @@ const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, s
    <div id="button-container">
    <button id='edit-click' onClick={() => {setEditRoutine(routine); setAddActivityTo({})}}><i className='fas fa-edit'></i></button>
    <button id='add-activity-button' onClick={() => {setAddActivityTo(routine); setEditRoutine({})} }>Add Activity</button>
-   <button id="delete-button" onClick={() => {deleteRoutine(routine.id, token, routines, setRoutines)}}><i className='fas fa-trash'></i></button>
+   <button id="delete-button" onClick={handleDelete}><i className='fas fa-trash'></i></button>
     </div>
     </div>
     )

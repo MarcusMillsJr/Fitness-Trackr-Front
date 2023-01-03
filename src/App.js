@@ -41,7 +41,7 @@ const App = () => {
     if(token){
       getUser(token).then(result => setUser(result));
     }
-  }, [token, routines])
+  }, [token])
   
  return(
     <>
@@ -66,7 +66,7 @@ const App = () => {
         <Route path="/register" element={<Register/>} />
 
         <Route path="/routines" element={<Routines routines={routines} setRoutines={setRoutines}/>} />
-        <Route path="/MyRoutines" element={<MyRoutines routines={routines} setRoutines={setRoutines} user={user} token={token}/>} />
+        <Route path="/MyRoutines" element={<MyRoutines routines={routines} activities={activities} setRoutines={setRoutines} user={user} token={token}/>} />
       </Routes>
     </>
  )}
