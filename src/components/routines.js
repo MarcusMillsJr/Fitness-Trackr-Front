@@ -1,4 +1,4 @@
-import {SingleRoutine,} from './index'
+import {SingleRoutine,} from './Index'
 const Routines = ({routines, setRoutines}) => {
 
     return(

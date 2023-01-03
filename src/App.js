@@ -1,5 +1,5 @@
 import { Route, Routes, Link } from "react-router-dom"
-import {  Activities, Home, Login, Routines, CreateActivity, Register, MyRoutines } from "./components/index"
+import {  Activities, Home, Login, Routines, CreateActivity, Register, MyRoutines } from "./components/Index"
 import { getActivities, fetchPublicRoutines, getUser } from "./api/api"
 import React, { useEffect, useState } from "react"
 
