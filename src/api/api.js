@@ -52,7 +52,7 @@ export async function updateRoutine(routineId, name, goal, token){
         throw error
     }
 }
-export async function deleteRoutine(routineId, token, routines, setRoutines){
+export async function deleteRoutine(routineId, token){
     try{
         const response = await fetch(`${baseURL}/routines/${routineId}`, {
             method: 'DELETE',
@@ -61,8 +61,6 @@ export async function deleteRoutine(routineId, token, routines, setRoutines){
                 'Authorization': `Bearer ${token}`
             }
         })
-        const newRoutines = routines.filter((routine) => routine.id !== routineId)
-        setRoutines(newRoutines)
         const result = await response.json();
         return result
     } catch(error){
@@ -71,6 +69,7 @@ export async function deleteRoutine(routineId, token, routines, setRoutines){
 }
 export async function addActivityToRoutine(activityId, count, duration, routineId, token){
     try{
+        console.log(activityId, count, duration, routineId, token)
         const response = await fetch(`${baseURL}/routines/${routineId}/activities`, {
             method: 'POST',
             headers: {
