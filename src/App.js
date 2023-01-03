@@ -47,7 +47,7 @@ const App = () => {
     <>
     <nav className="whole-nav">
     <nav className="nav-list">
-        <Link to="/" className="home-btn">Fitness Trackr</Link>
+        <Link to="/" className="home-btn">Fitness Trackr Home</Link>
       </nav>
     
 

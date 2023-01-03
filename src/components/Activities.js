@@ -17,7 +17,7 @@ const Activities = (props) => {
     <div className="list-activities">
     <ul>
       {activities.map((activity) => (
-        <li key={activity.id}><b>Activity Name:</b> {activity.name} & <br></br><b>Activity Description:</b> {activity.description}</li>
+        <li key={activity.id}><b>Activity Name:</b> {activity.name}<br></br><b>Activity Description:</b> {activity.description}</li>
       ))}
     </ul>
     </div>
