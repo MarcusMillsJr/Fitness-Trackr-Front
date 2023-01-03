@@ -144,25 +144,29 @@ export const registerUser = async (userObject) => {
 
 //POST /api/users/login
 export const loginUser = async (username, password) => {
-  try {
-    const response = await fetch(`${baseURL}/users/login`,{
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-          username,
-          password
-      })
-    })
-    
-    const result = await response.json();
-    return result;
-    
-  } catch(ex) {
-    console.log("error logging in user")
-  }
-}
+    try {
+      const response = await fetch(`${baseURL}/users/login`,{
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username,
+            password
+        })
+      });
+  
+      if (response.status === 500 || 401) {
+        throw new Error("Error logging in. Please check your username and password and try again.");
+      }
+  
+      const result = await response.json();
+      return result;
+    } catch(ex) {
+      console.log("error logging in user")
+    }
+  };
+  
 
 //GET /api/users/me
 export const getUser = async (token) => {

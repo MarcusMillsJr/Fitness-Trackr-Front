@@ -173,8 +173,8 @@ body, hmtl {
 
 .login-page{
     display: flex;
-    align-items: center;
-    height: 100vh;
+    position: fixed;
+    top:5rem;
 }
 
 .login-title{
@@ -193,13 +193,6 @@ body, hmtl {
     flex-direction: column;
 }
 
-.login-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 10vw;
-    margin: 0 auto;
-}
 
 .username{
     display: flex;
@@ -210,6 +203,7 @@ body, hmtl {
     display: flex;
     color:black;
 }
+
 
 .home-div{
     display: flex;
@@ -256,6 +250,12 @@ font-family: monospace;
     font-family: monospace;
     font-size: 1.2vw;
 }
+
+.form-title{
+  position:fixed;
+  top: 2rem;
+}
+
 .homediv-login{
     display: flex;
     color: white;
@@ -313,13 +313,35 @@ a {
     font-weight: bold;
 }
 
+#registerPage{
+  position: fixed;
+  top:3rem;
+}
+
+#login-page{
+  position: fixed;
+  top:7rem;
+}
+
 .routines-btn{
     display: flex;
     margin-left: 15%;
     color: white;
 }
 
+
+#register{
+  position: fixed;
+  top: 10rem;
+}
+.profile-btn{
+    display: flex;
+    color: white;
+}
+.login-btn{
+
 .myroutines-btn{
+
     display: flex;
     flex-direction: row;
     margin-left: 15%;

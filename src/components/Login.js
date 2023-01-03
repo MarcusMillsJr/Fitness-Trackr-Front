@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { loginUser } from "../api/api";
-
+import { Link } from "react-router-dom";
 
 const Login = ({token, setToken}) => {
   const [username, setUsername] = useState("");
@@ -17,41 +17,55 @@ const Login = ({token, setToken}) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const res = await loginUser(username, password);
-    const newToken = res['token']
-    setToken(newToken);
-    console.log(token, 'login component')
-    window.localStorage.setItem('fitness_tracker_JWT', newToken);
-    window.location.assign("/");
-  };
+    try {
+      const res = await loginUser(username, password);
+      const newToken = res['token']
+      setToken(newToken);
+      console.log(token, 'login component')
+      window.localStorage.setItem('fitness_tracker_JWT', newToken);
+      // window.location.assign("/");
+    } catch (error) {
+      window.alert("Error logging in. Please check your username and password and try again.");
+    }
+  }
 
   return (
-    <div className="login-form">
-      <h2 className="form-title">Login</h2>
-      <form onSubmit={handleSubmit} className="login-box">
-        <label>Username:</label>
-        <input
-          id="username"
-          onChange={handleOnChange}
-          value={username}
-          placeholder="username"
-        />
-
-        <label>Password:</label>
-        <input
-          id="password"
-          onChange={handleOnChange}
-          value={password}
-          placeholder="password"
-        />
-        <link></link>
-        <button type="submit" id="login-button">
-          Login
+    <div>
+      <div id="login-page">
+        <h1 className="form-title">Welcome Returning User!</h1>
+        <form onSubmit={handleSubmit} className="login-box">
+          <label>Username:</label>
+          <input
+            id="username"
+            onChange={handleOnChange}
+            value={username}
+            placeholder="Username"
+          />
+          <br />
+          <br />
+          <label>Password:</label>
+          <input
+            type="password"
+            id="Password"
+            onChange={handleOnChange}
+            value={password}
+            placeholder="Password"
+          />
+          <link></link>
+          <button type="submit" id="login-button">
+            Login
+          </button>
+        </form>
+      </div>
+      <br/>
+      <div id="register">
+        <h4>Don't have an account?</h4>
+        <button>
+          <Link to="/register"> Click here to Register</Link>
         </button>
-      </form>
+      </div>
     </div>
   );
-};
+  }
 
 export default Login;
-
