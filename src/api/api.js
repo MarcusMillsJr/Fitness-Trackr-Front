@@ -207,10 +207,8 @@ export const createActivity = async (token, name, description) => {
             'Authorization': `Bearer ${token}`
           },
           body: JSON.stringify({
-              post: {
                   name,
                   description,
-                }
             })
           })
 

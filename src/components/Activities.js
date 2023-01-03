@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 const Activities = (props) => {
   const { activities } = props;
 
-  console.log("this is activities prop --->", activities);
+  // console.log("this is activities prop --->", activities);
 
   return (
-    //if loggin in then say hello ${users name}
-
     <>
     <div className="activities-page">
     <div className="create-activity">
