@@ -100,7 +100,7 @@
     justify-content: space-between;
     margin: 10px;
   }
-  #delete-button {
+  #delete-button, #delete-activity {
     background-color: #AA0000;
     color: white;
     border: none;
@@ -111,7 +111,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
 }
-#delete-button:hover {
+#delete-activity {
+    width: 23px;
+    height: 23px;
+    margin-left: 5px;
+}
+#delete-button:hover, #delete-activity:hover {
     background-color: #DD0000;
     color: black;
 }
@@ -245,16 +250,12 @@ font-size: 6vw;
 margin: 0;
 font-family: monospace;
 }
-
-
-
 .homediv-slogan{
     display: flex;
     color: white;
     font-family: monospace;
     font-size: 1.2vw;
 }
-
 .homediv-login{
     display: flex;
     color: white;

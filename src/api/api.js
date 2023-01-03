@@ -69,7 +69,6 @@ export async function deleteRoutine(routineId, token){
 }
 export async function addActivityToRoutine(activityId, count, duration, routineId, token){
     try{
-        console.log(activityId, count, duration, routineId, token)
         const response = await fetch(`${baseURL}/routines/${routineId}/activities`, {
             method: 'POST',
             headers: {
