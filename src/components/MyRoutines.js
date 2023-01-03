@@ -1,6 +1,6 @@
 import {SingleRoutine, CreateNewRoutine, EditRoutine, AddActivityToRoutine} from './Index'
 import { useState, useEffect } from "react"
-const MyRoutines = ({user, routines, activities, setRoutines, token}) => {
+const MyRoutines = ({user, routines, activities, setRoutines, setUpdateRoutines, token}) => {
     const [editedRoutine, setEditRoutine] = useState({})
     const [addActivityTo, setAddActivityTo] = useState({})
     const[userRoutines, setUserRoutines] = useState([])
@@ -16,12 +16,12 @@ const MyRoutines = ({user, routines, activities, setRoutines, token}) => {
             <div className="card-container">
                 {userRoutines.map((routine, index) => {
                     return (
-                    <SingleRoutine key={index} routines={routines} routine={routine} setRoutines={setRoutines} setEditRoutine={setEditRoutine} setAddActivityTo={setAddActivityTo} token={token} />
+                    <SingleRoutine key={index} routines={routines} routine={routine} setRoutines={setRoutines} setEditRoutine={setEditRoutine} setAddActivityTo={setAddActivityTo} setUpdateRoutines={setUpdateRoutines} token={token} />
                     )
                 })}
                 
             </div>
-            {Object.keys(addActivityTo).length ? <AddActivityToRoutine activities={activities} addActivityTo={addActivityTo} setAddActivityTo={setAddActivityTo} token={token}/> :
+            {Object.keys(addActivityTo).length ? <AddActivityToRoutine activities={activities} addActivityTo={addActivityTo} setAddActivityTo={setAddActivityTo} setUpdateRoutines={setUpdateRoutines} token={token}/> :
             Object.keys(editedRoutine).length ? <EditRoutine
              routines={routines} editedRoutine={editedRoutine} token={token}
               setEditRoutine={setEditRoutine} setRoutines={setRoutines}/> : <CreateNewRoutine user={user} routines={routines} setRoutines={setRoutines} token={token}/>}

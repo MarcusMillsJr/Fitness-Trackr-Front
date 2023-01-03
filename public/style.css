@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: column;
   }
+
   #my-routines {
     display: flex;
   }
@@ -99,7 +100,7 @@
     justify-content: space-between;
     margin: 10px;
   }
-  #delete-button {
+  #delete-button, #delete-activity {
     background-color: #AA0000;
     color: white;
     border: none;
@@ -110,7 +111,12 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
 }
-#delete-button:hover {
+#delete-activity {
+    width: 23px;
+    height: 23px;
+    margin-left: 5px;
+}
+#delete-button:hover, #delete-activity:hover {
     background-color: #DD0000;
     color: black;
 }
@@ -139,20 +145,30 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: all 0.5s ease;
 }
+
 body, hmtl {
     margin: 0;
     border: none;
 }
 
-.video{
+.skate{
     display: flex;
     height: 110vh;
     width: 100vw;
     margin: 0;
     padding: 0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     object-fit:cover;
     position: fixed;
+}
+
+.hoops{
+  display: flex;
+  height: 110vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  object-fit:cover;
+  position: fixed;
 }
 
 .login-page{
@@ -200,6 +216,27 @@ body, hmtl {
     padding: 3rem 12rem;
 }
 
+.activity-title{
+  display: flex;
+  height: 10vh;
+  width: 100%;
+  background-color: #DD0000;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  position: fixed;
+}
+
+.activity-form{
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  position: fixed;
+  padding: 3rem 12rem;
+}
 .homediv-title{
 display: flex;
 color: white;
@@ -207,19 +244,18 @@ font-size: 6vw;
 margin: 0;
 font-family: monospace;
 }
-
-
-
 .homediv-slogan{
     display: flex;
     color: white;
     font-family: monospace;
     font-size: 1.2vw;
 }
+
 .form-title{
   position:fixed;
   top: 2rem;
 }
+
 .homediv-login{
     display: flex;
     color: white;
@@ -268,7 +304,10 @@ a {
 
 .nav-right{
     display: flex;
-    margin-left: 40%;
+    margin-left: 25%;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
     font-size: 140%;
     font-family: monospace;
     font-weight: bold;
@@ -290,6 +329,7 @@ a {
     color: white;
 }
 
+
 #register{
   position: fixed;
   top: 10rem;
@@ -299,12 +339,16 @@ a {
     color: white;
 }
 .login-btn{
+
+.myroutines-btn{
+
     display: flex;
+    flex-direction: row;
     margin-left: 15%;
     color: white;
 }
 
-.about-btn{
+.login-btn{
     display: flex;
     margin-left: 15%;
     color: white;
@@ -318,10 +362,3 @@ a {
 }
 
 /* Large screens */
-nav.nav-right {
-    display: flex;
-  }
-  
-  nav.nav-right a {
-    display: inline-block;
-  }

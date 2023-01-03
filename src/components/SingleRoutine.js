@@ -1,8 +1,7 @@
-import { deleteRoutine } from "../api/api";
-const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, setAddActivityTo, token}) => {
+import { deleteRoutine, deleteRoutineActivity } from "../api/api";
+const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, setAddActivityTo, setUpdateRoutines, token}) => {
 
     const handleDelete = async () => {
-        console.log(routines)
         const deletedRoutine = await deleteRoutine(routine.id, token)
         const newRoutines = routines.filter((routine) => routine.id !== deletedRoutine.id)
         setRoutines(newRoutines)
@@ -14,12 +13,17 @@ const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, s
             <p>Goal: {routine.goal}</p>
             <p>Creator: {routine.creatorName}</p>
             <h4>Activities for {routine.name}</h4>
-            {routine.activities ? <div>{routine.activities.map((activity, index) => {return (<div key={index}>
-                <p>Activity: {activity.name}</p>
+            {routine.activities.length ? <div>{routine.activities.map((activity, index) => {return (<div key={index}>
+                <p>Activity: {activity.name}  
+                <button onClick={async (event) => {                  
+                    event.preventDefault()
+                    await deleteRoutineActivity(token, activity.routineActivityId)
+                    setUpdateRoutines(Math.random())}} 
+                    id='delete-activity'><i className="fas fa-trash"></i></button></p>
                 <p>Description: {activity.description}</p>
                 <p>Duration: {activity.duration}</p>
                 <p>Count: {activity.count}</p>
-   </div>)})}</div>: null}</div>
+   </div>)})}</div>: <p>Currently no Activities</p>}</div>
    <div id="button-container">
    <button id='edit-click' onClick={() => {setEditRoutine(routine); setAddActivityTo({})}}><i className='fas fa-edit'></i></button>
    <button id='add-activity-button' onClick={() => {setAddActivityTo(routine); setEditRoutine({})} }>Add Activity</button>
