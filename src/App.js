@@ -49,22 +49,22 @@ const App = () => {
     <nav className="nav-list">
         <Link to="/" className="home-btn">Fitness Trackr</Link>
       </nav>
-        <nav className="nav-right">
+    
 
         <nav className="nav-right">
-        <Link to="/MyRoutines" className="profile-btn">My Routines</Link>
+        <Link to="/MyRoutines" className="myroutines-btn">My Routines</Link>
           <Link to="/activities" className="activities-btn">Activities</Link>
           <Link to="/routines" className="routines-btn">Routines</Link>
           <Link to="/login" className="login-btn">Login</Link>
         </nav>
-        </nav>
+
     </nav>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login token={token} setToken={setToken}/>} />
 
         <Route path="/activities" element={<Activities activities={activities} />}/>
-        <Route path="/createactivity" element={<CreateActivity setActivities={setActivities}/>} />
+        <Route path="/createactivity" element={<CreateActivity setActivities={setActivities} token={token}/>} />
         <Route path="/register" element={<Register/>} />
 
         <Route path="/routines" element={<Routines routines={routines} setRoutines={setRoutines}/>} />
