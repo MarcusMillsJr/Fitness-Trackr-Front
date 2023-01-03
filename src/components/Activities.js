@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Activities = (props) => {
-  const { activities } = props;
+const Activities = ({user, activities}) => {
+  
+  console.log('user.username --->', user.username);
 
   // console.log("this is activities prop --->", activities);
 
@@ -12,10 +13,11 @@ const Activities = (props) => {
           <div className="act-body">
             {activities.map((activity) => (
               <div className="maptivity">
-                  <p>ACTIVITY: {activity.name}</p>
-                  <p>DESCRIPTION: {activity.description}</p>
-                  <Link to="/createactivity" className="button-contanier">
-                    Create News Activity
+                <h3 className="activity-user">{user.username}</h3>
+                  <p className="activity-name">ACTIVITY: {activity.name}</p>
+                  <p className="activity-description">DESCRIPTION: {activity.description}</p>
+                  <Link to="/createactivity" className="activitycreate">
+                    Create Activity
                   </Link>
               </div>
             ))}

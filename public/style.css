@@ -38,6 +38,7 @@
     border: 2px solid #ccc;
     border-radius: 4px;
   }
+
 .num-input {
     width: 50px;
     padding: 4px 5px;
@@ -224,11 +225,40 @@ body, hmtl {
   display: flex;
   height: 10vh;
   width: 100%;
-  background-color: #DD0000;
+  background-color:black;
+  color: white;
   flex-direction: column;
   justify-content: center;
-  align-items: left;
-  position: fixed;
+  align-items: center;
+}
+
+.activity-name{
+  display: flex;
+  background-color:whitesmoke;
+  height:25%;
+  margin: 1%;
+}
+.activity-user{
+  display: flex;
+ 
+  height:25%;
+  align-items: center;
+  margin: 3% 1%;
+
+}
+
+.activity-description{
+  display: flex;
+  background-color:whitesmoke;
+  height:25%;
+  margin: 1%;
+}
+
+.activitycreate{
+  display: flex;
+  background-color:#3ea043;
+  width: 33%;
+  margin: 1%;
 }
 
 .activity-form{
@@ -341,9 +371,12 @@ font-family: monospace;
     display: flex;
     color: white;
 }
-.login-btn{}
 
+.login-btn{
+  display: flex;
+  text-decoration: none;
 }
+
 .myroutines-btn{
 
     display: flex;
@@ -403,8 +436,8 @@ font-family: monospace;
 .maptivity{
   display: flex;
   width: 29%;
-  background-color: yellow;
-  border-color:red;
+  height: 21vh;
+  background-color: white;
   justify-content: left;
   flex-direction: column;
   margin: 1%;
