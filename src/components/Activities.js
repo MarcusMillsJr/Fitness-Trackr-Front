@@ -8,29 +8,18 @@ const Activities = (props) => {
 
   return (
     <>
-    <div className="activities-page">
-    <div className="create-activity">
-    </div>
-    <div className="list-activities">
-    <ul>
-      {activities.map((activity) => (
-        <li key={activity.id}>
-          <b><p>ACTIVITY</p></b>
-          <p>{activity.name}</p>
-          <b>DESCRIPTION:</b> 
-          <b><p>{activity.description}</p></b>
-          <Link to="/createactivity" className="create-activity-link">
-        Create New Activity
-      </Link>
-          </li>
-      ))}
-    </ul>
-    </div>
-    </div>
-    
-     
-
-      
+        <h1 className="activity-title">ACTIVITIES</h1>
+          <div className="act-body">
+            {activities.map((activity) => (
+              <div className="maptivity">
+                  <p>ACTIVITY: {activity.name}</p>
+                  <p>DESCRIPTION: {activity.description}</p>
+                  <Link to="/createactivity" className="button-contanier">
+                    Create News Activity
+                  </Link>
+              </div>
+            ))}
+          </div>
     </>
   );
 };

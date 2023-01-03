@@ -361,4 +361,28 @@ font-family: monospace;
     margin-left: 15%;
 }
 
+.act-body{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  background-color: whitesmoke;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.maptivity{
+  display: flex;
+  width: 29%;
+  background-color: yellow;
+  border-color:red;
+  justify-content: left;
+  flex-direction: column;
+  margin: 1%;
+  padding: 1%;
+  box-shadow: 1px 1px 1px black;
+}
+
+
+
 /* Large screens */
