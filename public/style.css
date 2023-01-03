@@ -1,3 +1,7 @@
+*{
+  text-decoration: none;
+}
+
 .routine-forms {
     position: sticky;
     top: 50px;
@@ -277,7 +281,6 @@ font-family: monospace;
     flex-direction: row;
     align-items: center;
     text-decoration: none;
-    list-style: none;
     width: 100vw;
     height: 3rem;
     background-color: rgb(0, 0, 0);
@@ -286,10 +289,6 @@ font-family: monospace;
 }
 
 
-a {
-    text-decoration: none;
-    color: black;
-  }
 
 .home-btn{
     display: flex;
@@ -340,6 +339,7 @@ a {
 }
 .login-btn{
 
+}
 .myroutines-btn{
 
     display: flex;

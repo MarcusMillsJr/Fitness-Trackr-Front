@@ -10,14 +10,19 @@ const Activities = (props) => {
     <>
     <div className="activities-page">
     <div className="create-activity">
-        <Link to="/createactivity" className="create-activity-link">
-        Create New Activity
-      </Link>
     </div>
     <div className="list-activities">
     <ul>
       {activities.map((activity) => (
-        <li key={activity.id}><b>Activity Name:</b> {activity.name}<br></br><b>Activity Description:</b> {activity.description}</li>
+        <li key={activity.id}>
+          <b><p>ACTIVITY</p></b>
+          <p>{activity.name}</p>
+          <b>DESCRIPTION:</b> 
+          <b><p>{activity.description}</p></b>
+          <Link to="/createactivity" className="create-activity-link">
+        Create New Activity
+      </Link>
+          </li>
       ))}
     </ul>
     </div>
