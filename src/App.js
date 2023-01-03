@@ -18,7 +18,7 @@ const App = () => {
       try {
         const result = await getActivities();
         setActivities(result);
-        console.log('use effect result',result);
+        // console.log('use effect result',result);
       } catch (error) {
         console.error(error);
       }
@@ -63,8 +63,8 @@ const App = () => {
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login token={token} setToken={setToken}/>} />
 
-        <Route path="/activities" element={<Activities activities={activities} />}/>
-        <Route path="/createactivity" element={<CreateActivity setActivities={setActivities} token={token}/>} />
+        <Route path="/activities" element={<Activities activities={activities} token={token} />}/>
+        <Route path="/createactivity" element={<CreateActivity setActivities={setActivities} activities={activities} token={token}/>} />
         <Route path="/register" element={<Register/>} />
 
         <Route path="/routines" element={<Routines routines={routines} setRoutines={setRoutines}/>} />
