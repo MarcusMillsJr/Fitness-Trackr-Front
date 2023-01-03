@@ -1,4 +1,4 @@
-import {SingleRoutine, CreateNewRoutine, EditRoutine, AddActivityToRoutine} from './index'
+import {SingleRoutine, CreateNewRoutine, EditRoutine, AddActivityToRoutine} from './Index'
 import { useState, useEffect } from "react"
 const MyRoutines = ({user, routines, activities, setRoutines, token}) => {
     const [editedRoutine, setEditRoutine] = useState({})
