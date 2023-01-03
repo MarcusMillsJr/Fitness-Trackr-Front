@@ -9,7 +9,6 @@ const Home = () => {
     <>
       <div className="video">
       <img src={skate} alt="friends about to skate" className="skate"/>
-        <img src={skate} alt="green background" className="backdrop" />
         <div className="home-div">
         <h1 className="homediv-title">Fitness Trackr</h1>
         <h2 className="homediv-slogan">Let's plan some activities and leisure, together.</h2>

@@ -28,6 +28,7 @@ const CreateActivity = ({ token, setActivities }) => {
 
   return (<>
     <img src={hoops} alt="friends about to skate" className="hoops"/>
+    
     <h2 className="activity-title">CREATE NEW ACTIVITY</h2>
     <form className="activity-form" onSubmit={onFormSubmit}>
 
