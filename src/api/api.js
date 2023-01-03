@@ -123,24 +123,28 @@ export async function deleteRoutineActivity(token, routineActivityId){
 
 //Post /api/users/register
 export const registerUser = async (userObject) => {
-  const url = `${baseURL}/users/register`;
-  const response = await fetch(url, {
-      method: "POST",
-      headers: {
+    try {
+      const url = `${baseURL}/users/register`;
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
           'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
+        },
+        body: JSON.stringify({
           username: userObject.user,
           password: userObject.password
-      }),
-  });
-  const json = await response.json();
-  console.log(json);
-
-  localStorage.setItem('fitness_tracker_JWT', json.token)
-
-  return json;
-}
+        }),
+      });
+      const json = await response.json();
+  
+      localStorage.setItem('fitness_tracker_JWT', json.token)
+  
+      return json;
+    } catch (error) {
+      console.error(error);
+      window.alert("A user by that username already exists");
+    }
+  };
 
 //POST /api/users/login
 export const loginUser = async (username, password) => {
@@ -156,14 +160,14 @@ export const loginUser = async (username, password) => {
         })
       });
   
-      if (response.status === 500 || 401) {
+      if (!response.ok) {
         throw new Error("Error logging in. Please check your username and password and try again.");
       }
   
       const result = await response.json();
       return result;
     } catch(ex) {
-      console.log("error logging in user")
+      throw ex;
     }
   };
   
@@ -182,7 +186,7 @@ export const getUser = async (token) => {
     return result;
     
   } catch(ex) {
-    console.log('error getting users details')
+    window.alert('Error getting users details')
   }
 }
 
