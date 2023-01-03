@@ -1,5 +1,5 @@
 import { Route, Routes, Link } from "react-router-dom"
-import {  Activities, Home, Login, Routines, CreateActivity, Register, MyRoutines } from "./components/Index"
+import {  Activities, Home, Login, Routines, CreateActivity, Register, MyRoutines,} from "./components/Index"
 import { getActivities, fetchPublicRoutines, getUser } from "./api/api"
 import React, { useEffect, useState } from "react"
 
@@ -14,6 +14,11 @@ const App = () => {
     window.localStorage.getItem("token" || "")
   );
  
+  function logout() {
+    window.localStorage.removeItem('fitness_tracker_JWT');
+    setToken('');
+    setUser('');
+  }
 
   useEffect(() => {
     const getAllActivities = async () => {
@@ -57,12 +62,22 @@ const App = () => {
         <Link to="/MyRoutines" className="myroutines-btn">My Routines</Link>
           <Link to="/activities" className="activities-btn">Activities</Link>
           <Link to="/routines" className="routines-btn">Routines</Link>
-          <Link to="/login" className="login-btn">Login</Link>
+          {token ? (
+          <Link to="/" onClick={logout}>
+            Logout
+          </Link>
+        ) : (
+          <>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
+          </>
+            )
+          }
         </nav>
 
     </nav>
       <Routes>
-        <Route exact path="/" element={<Home />} />
+        <Route exact path="/" element={<Home token={token} user={user} />} />
         <Route path="/login" element={<Login token={token} setToken={setToken}/>} />
 
         <Route path="/activities" element={<Activities activities={activities} token={token} />}/>
