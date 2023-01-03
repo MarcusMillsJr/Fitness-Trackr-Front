@@ -204,7 +204,8 @@ export const getActivities = async (token) => {
 
 export const createActivity = async (token, name, description) => {
   try{
-      const response = await fetch(`${baseURL}/actvities`, {
+
+      const response = await fetch(`${baseURL}/activities`, {
           method: "POST",
           headers: {
             'Content-Type': 'application/json',
@@ -219,6 +220,7 @@ export const createActivity = async (token, name, description) => {
           const data = await response.json()
           console.log('data from createActivity', data);
           return data
+
       } catch (error) {
   console.log("error creating post", error);
 }

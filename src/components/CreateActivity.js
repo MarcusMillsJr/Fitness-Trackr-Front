@@ -13,14 +13,23 @@ const CreateActivity = ({ token, activities, setActivities }) => {
 
   const onFormSubmit = async (event) => {
     event.preventDefault();
+    
+    const array = activities.filter((activity) =>{
+      return name === activity.name
+    })
 
     try {
-    
-      const result = await createActivity(token, name, description);
+      if(!array.length){
+        const result = await createActivity(token, name, description);
 
       setActivities([...activities, result]);
-      console.log("Activities second-->", activities);
-      navigate.push("/activities");
+      setDescription("")
+      setName("")
+      navigate("/activities")
+      } else {
+        alert("activity exists already")
+      }
+
     } catch (error) {
       console.error("error creating post");
     }
