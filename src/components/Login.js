@@ -24,7 +24,8 @@ const Login = ({token, setToken}) => {
       setToken(newToken);
       console.log(token, 'login component')
       window.localStorage.setItem('fitness_tracker_JWT', newToken);
-      // window.location.assign("/");
+      window.alert("You have successfully signed in! Now redirecting to home page...")
+      window.location.assign("/");
     } catch (error) {
       window.alert("Error logging in. Please check your username and password and try again.");
     }
@@ -70,3 +71,4 @@ const Login = ({token, setToken}) => {
   }
 
 export default Login;
+
