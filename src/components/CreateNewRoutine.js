@@ -8,7 +8,6 @@ const CreateNewRoutine = ({routines, setRoutines, token, user}) => {
         const newRoutine = await createRoutine(name, goal, token)
         newRoutine.creatorName = user.username
         newRoutine.activities = [];
-        console.log(newRoutine)
         setRoutines([...routines, newRoutine]);
         setName('')
         setGoal('')

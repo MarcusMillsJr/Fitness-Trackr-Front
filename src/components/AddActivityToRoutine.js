@@ -26,6 +26,7 @@ const AddActivityToRoutine = ({routines, addActivityTo, activities, setAddActivi
                 value={activity}
                 required
                 onChange={(event) => setActivity(event.target.value)}>
+                    <option>Choose Activity</option>
                 {activities.map((activity, index) => <option
                 key={index} value={activity.name}>{activity.name}</option>)}
             </select>
