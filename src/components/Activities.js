@@ -12,6 +12,7 @@ const Activities = ({ user, activities }) => {
   return (
     <>
       <div className="activity-create-div">
+        <h1 className="dog">{user.username}</h1>
         <Link to="/createactivity" className="activitycreate">
           Create Activity
         </Link>

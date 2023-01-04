@@ -185,12 +185,6 @@ body, hmtl {
     background-color: #0c8a1b;
 }
 
-.login-box{
-  display: flex;
-  height: 10rem;
-  margin
-}
-
 .login-title{
     display: flex;
     color: white;
@@ -209,7 +203,17 @@ body, hmtl {
 
 .activity-create-div{
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15rem;
+  background-color: purple;
 }
+
+.dog{
+  display: flex;
+  color: white;
+}
+
 .username{
     display: flex;
     color: black
@@ -430,6 +434,12 @@ font-family: monospace;
     margin-left: 15%;
 }
 
+.activities-h1{
+  display: block;
+  width: 15rem;
+  height: 7rem;
+  background-color: yellow;
+}
 
 .homediv-username1 {
 	background: linear-gradient(-30deg, #ffffff, #86d672, #0c8a1b, #074b0a);
