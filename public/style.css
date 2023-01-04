@@ -199,7 +199,9 @@ body, hmtl {
     flex-direction: column;
 }
 
-
+.activity-create-div{
+  display: flex;
+}
 .username{
     display: flex;
     color: black
@@ -268,7 +270,7 @@ activity-label{
   font-size: 2.3vh;
   align-items: center;
   justify-content: center;
-  margin: 3% 1%;
+  margin: 5% 1%;
 }
 
 .activity-form{
