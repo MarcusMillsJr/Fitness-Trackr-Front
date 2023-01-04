@@ -6,6 +6,7 @@ const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, s
         const newRoutines = routines.filter((routine) => routine.id !== deletedRoutine.id)
         setRoutines(newRoutines)
     }
+    
     return (
         <div key={index} className='card'>
             <h3 className="card-header">Routine: {routine.name}</h3>

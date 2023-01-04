@@ -46,7 +46,7 @@ const CreateActivity = ({ token, activities, setActivities }) => {
       </label>
       <input
         type="text"
-        placeholder="enter name"
+        placeholder="name of activity"
         className="forminput"
         autoComplete="off"
         value={name}
@@ -60,7 +60,7 @@ const CreateActivity = ({ token, activities, setActivities }) => {
       </label>
       <input
         type="text"
-        placeholder="enter description"
+        placeholder="descriptionm"
         className="forminput"
         autoComplete="off"
         value={description}

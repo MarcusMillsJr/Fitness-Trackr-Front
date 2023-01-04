@@ -1,31 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import hoops from "../images/hoops2.jpg";
+import CreateActivity from "./CreateActivity";
 
-const Activities = (props) => {
-  const { activities } = props;
+const Activities = ({ user, activities }) => {
+  console.log("user.username --->", user.username);
+  console.log('activities -->', activities);
 
   // console.log("this is activities prop --->", activities);
 
   return (
     <>
-    <div className="activities-page">
-    <div className="create-activity">
-        <Link to="/createactivity" className="create-activity-link">
-        Create New Activity
-      </Link>
-    </div>
-    <div className="list-activities">
-    <ul>
-      {activities.map((activity) => (
-        <li key={activity.id}><b>Activity Name:</b> {activity.name}<br></br><b>Activity Description:</b> {activity.description}</li>
-      ))}
-    </ul>
-    </div>
-    </div>
-    
-     
-
-      
+      <div className="activity-create-div">
+        <Link to="/createactivity" className="activitycreate">
+          Create Activity
+        </Link>
+      </div>
+      <div className="act-body">
+        {activities.map((activity) => (
+          <div className="maptivity">
+            <p className="activity-name">ACTIVITY: {activity.name}</p>
+            <p className="activity-description">
+              DESCRIPTION: {activity.description}
+            </p>
+          </div>
+        ))}
+      </div>
     </>
   );
 };

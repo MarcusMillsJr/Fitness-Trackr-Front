@@ -63,7 +63,7 @@ const App = () => {
           <Link to="/activities" className="activities-btn">Activities</Link>
           <Link to="/routines" className="routines-btn">Routines</Link>
           {token ? (
-          <Link to="/" onClick={logout}>
+          <Link to="/" onClick={logout} className="login-btn">
             Logout
           </Link>
         ) : (
@@ -80,7 +80,7 @@ const App = () => {
         <Route exact path="/" element={<Home token={token} user={user} />} />
         <Route path="/login" element={<Login token={token} setToken={setToken}/>} />
 
-        <Route path="/activities" element={<Activities activities={activities} token={token} />}/>
+        <Route path="/activities" element={<Activities activities={activities} user={user}  token={token} />}/>
         <Route path="/createactivity" element={<CreateActivity setActivities={setActivities} activities={activities} token={token}/>} />
         <Route path="/register" element={<Register/>} />
 
