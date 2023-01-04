@@ -4,7 +4,7 @@
 
 .routine-forms {
     position: sticky;
-    top: 50px;
+    top: 60px;
     width: 300px;
     height: fit-content;
     margin: 20px;
@@ -76,6 +76,7 @@
   }
   .card-container {
     position: relative;
+    width: 960px;
     top: 50px;
     display: flex;
     flex-wrap: wrap;
