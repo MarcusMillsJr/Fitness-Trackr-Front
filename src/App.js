@@ -59,18 +59,21 @@ const App = () => {
     
 
         <nav className="nav-right">
-        <Link to="/MyRoutines" className="myroutines-btn">My Routines</Link>
           <Link to="/activities" className="activities-btn">Activities</Link>
           <Link to="/routines" className="routines-btn">Routines</Link>
           {token ? (
-          <Link to="/" onClick={logout} className="login-btn">
+          <>
+             <Link to="/MyRoutines" className="myroutines-btn">My Routines</Link>
+            <Link to="/" onClick={logout} className="login-btn">
             Logout
           </Link>
+          </>
+         
         ) : (
           <>
-            <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
+            <Link to="/login" className="log-nav">Login</Link>
           </>
+
             )
           }
         </nav>

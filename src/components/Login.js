@@ -35,7 +35,7 @@ const Login = ({token, setToken}) => {
     <div>
       <div id="login-page">
         <h1 className="form-title">Welcome Returning User!</h1>
-        <form onSubmit={handleSubmit} className="login-box">
+        <form onSubmit={handleSubmit} className="username-box">
           <label>Username:</label>
           <input
             id="username"

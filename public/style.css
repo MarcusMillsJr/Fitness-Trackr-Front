@@ -181,6 +181,14 @@ body, hmtl {
     display: flex;
     position: fixed;
     top:5rem;
+    height: 100vh;
+    background-color: #0c8a1b;
+}
+
+.login-box{
+  display: flex;
+  height: 10rem;
+  margin
 }
 
 .login-title{
@@ -293,6 +301,8 @@ font-size: 6vw;
 margin: 0;
 font-family: monospace;
 }
+
+
 .homediv-slogan{
     display: flex;
     color: white;
@@ -374,6 +384,16 @@ font-family: monospace;
     color: white;
 }
 
+.log-nav{
+  display: flex;
+  margin-left: 15%;
+  color: white;
+}
+.reg-nav{
+  display: flex;
+  margin-left: 15%;
+  color: white;
+}
 
 #register{
   position: fixed;
