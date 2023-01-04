@@ -177,29 +177,6 @@ body, hmtl {
   position: fixed;
 }
 
-.login-page{
-    display: flex;
-    position: fixed;
-    top:5rem;
-    height: 100vh;
-    background-color: #0c8a1b;
-}
-
-.login-title{
-    display: flex;
-    color: white;
-}
-
-.login-form{
-    display: flex;
-    justify-content: center;
-    height: 70vh;
-    width: 50vw;
-    align-items: center;
-    background-color: black;
-    margin: 0 auto;
-    flex-direction: column;
-}
 
 .activity-create-div{
   display: flex;
@@ -399,10 +376,6 @@ font-family: monospace;
   color: white;
 }
 
-#register{
-  position: fixed;
-  top: 10rem;
-}
 .profile-btn{
     display: flex;
     color: white;
@@ -462,6 +435,7 @@ font-family: monospace;
   font-size: 10%;
 }
 
+
 @keyframes animated_text {
 	0% { background-position: 0px 50%; }
 	50% { background-position: 100% 50%; }
@@ -494,4 +468,75 @@ font-family: monospace;
   box-shadow: 1px 1px 1px black;
 }
 
+#login-page {
+  width: 30%;
+  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+}
+
+.form-title {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 8px;
+  font-size: 1em;
+}
+
+#login-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 40px;
+}
+
+#login-button:hover {
+  background-color: #45a049;
+}
+
+#register {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+#register h4 {
+  margin-bottom: 10px;
+}
+
+#register button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#register button:hover {
+  background-color: #444;
+}
+
+#register button a {
+  color: white;
+  text-decoration: none;
+}
 
