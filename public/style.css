@@ -183,12 +183,27 @@ body, hmtl {
   justify-content: center;
   align-items: center;
   height: 15rem;
-  background-color: purple;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0%;
+  background-color: rgb(226, 226, 226);
 }
 
 .dog{
-  display: flex;
-  color: white;
+    background: linear-gradient(-30deg, #a70000, #dc6700, #eefa03, #19a320, purple, blue);
+    background-size: 300%;
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 3.5rem;
+    letter-spacing: 3px;
+    font-family: monospace;
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: animated_text 10s ease-in-out infinite;
+    -moz-animation: animated_text 10s ease-in-out infinite;
+    -webkit-animation: animated_text 10s ease-in-out infinite;
+  
 }
 
 .username{
@@ -227,8 +242,17 @@ body, hmtl {
 .activity-name{
   display: flex;
   background-color:rgb(28, 28, 28);
-  height:25%;
+  height:3rem;
   margin: 1%;
+  font-family: monospace;
+}
+
+.activity-description{
+  display: flex;
+  background-color:rgb(28, 28, 28);
+  height:3rem;
+  margin: 1%;
+  font-family: monospace;
 }
 
 activity-label{
@@ -243,36 +267,54 @@ activity-label{
 
 }
 
-.activity-description{
-  display: flex;
-  background-color:rgb(28, 28, 28);
-  height:25%;
-  margin: 1%;
-}
 
 .activitycreate{
   display: flex;
-  background-color:#9e0000;
-  height: 20%;
+  background-color:#009b03;
+  height: 10%;
   width: 33%;
   padding: 1%;
-  font-size: 2.3vh;
+  font-weight: bolder;
+  text-decoration: none;
+  color:white;
+  font-size: 2rem;
   align-items: center;
   justify-content: center;
-  margin: 5% 1%;
+  font-family: monospace;
+  box-shadow: 3px 3px 5px black;
 }
 
 .activity-form{
   display: flex;
   height: 20vh;
+  width: 10rem;
   flex-direction: column;
   background-color: black;
   justify-content: center;
   align-items: center;
-  align-items: left;
   margin: 0 auto;
-  position: fixed;
   padding: 3rem 12rem;
+  position: relative;
+  border-radius: 25px;
+}
+
+.formbutton{
+display: flex;
+margin: 2rem;
+width: 10rem;
+justify-content: center;
+align-items: center;
+background-color:#009b03;
+font-weight: bolder;
+color: white;
+border-radius: 5px;
+}
+
+.forminput{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .homediv-title{
@@ -415,11 +457,11 @@ font-family: monospace;
 }
 
 .homediv-username1 {
-	background: linear-gradient(-30deg, #ffffff, #86d672, #0c8a1b, #074b0a);
+	background: linear-gradient(-30deg, #a70000, #dc6700, #eefa03, #19a320, purple, blue);
 	background-size: 300%;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: monospace;
 	font-weight: 900;
-	font-size: 1.5vw;
+	font-size: 2rem;
 	letter-spacing: 3px;
   font-family: monospace;
 	text-transform: uppercase;
@@ -430,9 +472,11 @@ font-family: monospace;
 	-webkit-animation: animated_text 10s ease-in-out infinite;
 }
 
-.homediv-username{
+.homediv-username2{
+  display: flex;
   color:white;
-  font-size: 10%;
+  font-size: 2rem;
+  font-family: monospace;
 }
 
 
