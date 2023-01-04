@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import hoops from "../images/hoops2.jpg";
-import CreateActivity from "./CreateActivity";
-
 const Activities = ({ user, activities, token }) => {
   return (
     <>
