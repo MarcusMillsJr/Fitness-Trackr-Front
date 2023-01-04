@@ -25,7 +25,6 @@ const App = () => {
       try {
         const result = await getActivities();
         setActivities(result);
-        // console.log('use effect result',result);
       } catch (error) {
         console.error(error);
       }

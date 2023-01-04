@@ -191,7 +191,6 @@ export const getUser = async (token) => {
 }
 
 export const getActivities = async (token) => {
-  // console.log(token);
     try{
         const response = await fetch(`${baseURL}/activities`, {
         headers: {
@@ -199,7 +198,6 @@ export const getActivities = async (token) => {
           }});
         
         const activities = await response.json();
-      //   console.log(activities, "fetched activities data")
         return activities
     } catch(error){
         console.error('error fetching activities')
@@ -222,11 +220,10 @@ export const createActivity = async (token, name, description) => {
           })
 
           const data = await response.json()
-          console.log('data from createActivity', data);
           return data
 
       } catch (error) {
-  console.log("error creating post", error);
+        console.error(error)
 }
 }
 

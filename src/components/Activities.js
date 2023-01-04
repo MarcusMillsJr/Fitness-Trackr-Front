@@ -3,19 +3,15 @@ import { Link } from "react-router-dom";
 import hoops from "../images/hoops2.jpg";
 import CreateActivity from "./CreateActivity";
 
-const Activities = ({ user, activities }) => {
-  console.log("user.username --->", user.username);
-  console.log('activities -->', activities);
-
-  // console.log("this is activities prop --->", activities);
-
+const Activities = ({ user, activities, token }) => {
   return (
     <>
       <div className="activity-create-div">
         <h1 className="dog">{user.username}</h1>
-        <Link to="/createactivity" className="activitycreate">
+        {token ? <Link to="/createactivity" className="activitycreate">
           CREATE NEW ACTIVITY
         </Link>
+        : null}
       </div>
       <div className="act-body">
         {activities.map((activity) => (

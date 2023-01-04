@@ -3,7 +3,6 @@ import { createActivity } from "../api/api";
 import { useNavigate } from "react-router-dom";
 import hoops from '../images/hoops2.jpg'
 
-// console.log('createActivity call', createActivity());
 const CreateActivity = ({ token, activities, setActivities }) => {
 
   const [name, setName] = useState("");

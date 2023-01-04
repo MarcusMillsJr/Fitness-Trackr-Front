@@ -34,7 +34,7 @@ const RegisterUser = () => {
     return (
       <div id='registerPage'>
         <h2>Create New User</h2>
-        <form>
+        <form className='username-box'>
             <label htmlFor="username">Username: </label>
             <input type="text" className="RegisterBox" id="username" placeholder="Username" value={user} onChange={handleUserChange}  />
             <br/>

@@ -394,6 +394,7 @@ font-family: monospace;
 
 #registerPage{
   position: fixed;
+  margin-left: 30px;
   top:3rem;
 }
 
@@ -513,7 +514,7 @@ font-family: monospace;
   box-shadow: 1px 1px 1px black;
 }
 
-#login-page {
+#login-page, #register-page {
   width: 30%;
   height: 50%;
   position: absolute;
@@ -560,7 +561,6 @@ input {
 
 #register {
   text-align: center;
-  margin-top: 5rem;
 }
 
 #register h4 {

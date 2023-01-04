@@ -22,7 +22,6 @@ const Login = ({token, setToken}) => {
       const res = await loginUser(username, password);
       const newToken = res['token']
       setToken(newToken);
-      console.log(token, 'login component')
       window.localStorage.setItem('fitness_tracker_JWT', newToken);
       window.alert("You have successfully signed in! Now redirecting to home page...")
       window.location.assign("/");
@@ -34,6 +33,7 @@ const Login = ({token, setToken}) => {
   return (
     <div>
       <div id="login-page">
+        <div>
         <h1 className="form-title">Welcome Returning User!</h1>
         <form onSubmit={handleSubmit} className="username-box">
           <label>Username:</label>
@@ -65,6 +65,7 @@ const Login = ({token, setToken}) => {
         <button>
           <Link to="/register"> Click here to Register</Link>
         </button>
+        </div>
       </div>
     </div>
   );
