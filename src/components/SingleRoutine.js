@@ -14,7 +14,7 @@ const SingleRoutine = ({routine, index, setEditRoutine, routines, setRoutines, s
             <p>Goal: {routine.goal}</p>
             <p>Creator: {routine.creatorName}</p>
             <h4>Activities for {routine.name}</h4>
-            {routine.activities.length ? <div>{routine.activities.map((activity, index) => {return (<div key={index}>
+            {routine.activities ? <div>{routine.activities.map((activity, index) => {return (<div key={index}>
                 <p>Activity: {activity.name}  
                 <button onClick={async (event) => {                  
                     event.preventDefault()
