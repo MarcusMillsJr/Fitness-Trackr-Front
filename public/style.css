@@ -14,6 +14,7 @@
     padding: 10px;
     flex-shrink: 0;
   }
+  
   #add-activity-form{
     display: flex;
     flex-direction: column;
@@ -224,23 +225,27 @@ body, hmtl {
 .activity-title{
   display: flex;
   height: 10vh;
+  margin: 1rem;
   width: 100%;
   background-color:black;
   color: white;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 .activity-name{
   display: flex;
-  background-color:whitesmoke;
+  background-color:rgb(28, 28, 28);
   height:25%;
   margin: 1%;
 }
+
+activity-label{
+  display: flex;
+  color: white;
+}
 .activity-user{
   display: flex;
- 
   height:25%;
   align-items: center;
   margin: 3% 1%;
@@ -249,28 +254,36 @@ body, hmtl {
 
 .activity-description{
   display: flex;
-  background-color:whitesmoke;
+  background-color:rgb(28, 28, 28);
   height:25%;
   margin: 1%;
 }
 
 .activitycreate{
   display: flex;
-  background-color:#3ea043;
+  background-color:#9e0000;
+  height: 20%;
   width: 33%;
-  margin: 1%;
+  padding: 1%;
+  font-size: 2.3vh;
+  align-items: center;
+  justify-content: center;
+  margin: 3% 1%;
 }
 
 .activity-form{
   display: flex;
-  height: 100vh;
-  width: 100%;
+  height: 20vh;
   flex-direction: column;
+  background-color: black;
   justify-content: center;
+  align-items: center;
   align-items: left;
+  margin: 0 auto;
   position: fixed;
   padding: 3rem 12rem;
 }
+
 .homediv-title{
 display: flex;
 color: white;
@@ -286,7 +299,6 @@ font-family: monospace;
 }
 
 .form-title{
-  position:fixed;
   top: 2rem;
 }
 
@@ -306,9 +318,7 @@ font-family: monospace;
     margin-top: 1rem;
 }
 
-.homediv-username{
-  color:white
-}
+
 
 .whole-nav{
     display: flex;
@@ -328,7 +338,7 @@ font-family: monospace;
     display: flex;
     height: inherit;
     width: 200%;
-    margin-left: 30%; 
+    margin-left: 10%; 
     font-weight: bolder;
     color: white;
     font-size: 230%;
@@ -337,7 +347,7 @@ font-family: monospace;
 
 .nav-right{
     display: flex;
-    margin-left: 25%;
+    margin-left: 20%;
     justify-content: center;
     width: 50%;
     align-items: center;
@@ -400,18 +410,24 @@ font-family: monospace;
 
 
 .homediv-username1 {
-	background: linear-gradient(-45deg, #6355a4, #6355a4, #e89a3e, #e89a3e);
+	background: linear-gradient(-30deg, #ffffff, #86d672, #0c8a1b, #074b0a);
 	background-size: 300%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 900;
-	font-size: 5vw;
-	letter-spacing: -5px;
+	font-size: 1.5vw;
+	letter-spacing: 3px;
+  font-family: monospace;
 	text-transform: uppercase;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	animation: animated_text 10s ease-in-out infinite;
 	-moz-animation: animated_text 10s ease-in-out infinite;
 	-webkit-animation: animated_text 10s ease-in-out infinite;
+}
+
+.homediv-username{
+  color:white;
+  font-size: 10%;
 }
 
 @keyframes animated_text {
@@ -428,7 +444,7 @@ font-family: monospace;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  background-color: whitesmoke;
+  background-color: white;
   margin: 0 auto;
   align-items: center;
 }
@@ -437,7 +453,8 @@ font-family: monospace;
   display: flex;
   width: 29%;
   height: 21vh;
-  background-color: white;
+  background-color: black;
+  color: white;
   justify-content: left;
   flex-direction: column;
   margin: 1%;
@@ -446,5 +463,3 @@ font-family: monospace;
 }
 
 
-
-/* Large screens */

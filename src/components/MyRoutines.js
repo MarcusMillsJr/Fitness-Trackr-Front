@@ -12,6 +12,9 @@ const MyRoutines = ({user, routines, activities, setRoutines, setUpdateRoutines,
     }, [user, routines])
     return (
         <>
+        <div>
+            {user.username}
+        </div>
         <div id='my-routines'>
             <div className="card-container">
                 {userRoutines.map((routine, index) => {

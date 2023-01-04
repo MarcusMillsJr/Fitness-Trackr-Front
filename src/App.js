@@ -63,7 +63,7 @@ const App = () => {
           <Link to="/activities" className="activities-btn">Activities</Link>
           <Link to="/routines" className="routines-btn">Routines</Link>
           {token ? (
-          <Link to="/" onClick={logout}>
+          <Link to="/" onClick={logout} className="login-btn">
             Logout
           </Link>
         ) : (
