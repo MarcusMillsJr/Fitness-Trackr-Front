@@ -4,7 +4,6 @@ import { getActivities, fetchPublicRoutines, getUser } from "./api/api"
 import React, { useEffect, useState } from "react"
 
 
-
 const App = () => {
   const [user, setUser] = useState({})
   const [activities, setActivities] = useState([]);
