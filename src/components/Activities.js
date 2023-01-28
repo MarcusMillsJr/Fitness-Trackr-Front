@@ -13,7 +13,7 @@ const Activities = ({ user, activities, token }) => {
       <div className="act-body">
         {activities.map((activity) => (
           <div className="maptivity">
-            <p className="activity-name">ACTIVITY: {activity.name}</p>
+            <p className="activity-name">ACTIVITY:{activity.name}</p>
             <p className="activity-description">
               DESCRIPTION: {activity.description}
             </p>
